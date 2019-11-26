@@ -1,0 +1,19 @@
+.pickstyle-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.pickstyle-ul{
+    list-style: none;
+}
+:hover.pickstyle-ul li{
+    cursor: pointer;
+}
+.pickstyle{
+    display: inline-block;
+    width: 50px;
+    border-bottom: 2px #aaaaaa solid;
+}
+#MdArrowDropDown{
+    display: inline-block;
+}

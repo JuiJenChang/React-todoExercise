@@ -1,84 +1,95 @@
 import React, { Component } from 'react';
-import './App.css';
+import PickStyle from './component/PickStyle';
 import ExerciseItem from './component/ExerciseItem';
-import TitleList from './component/TitleList';
-import { Consumer } from './component/context';
-import { MdArrowDropDown } from "react-icons/md";
+import './App.css';
+
+
+const theStyle = {
+  light: {
+    background: 'white',
+    color: 'black',
+  },
+  dark: {
+    background: 'black',
+    color: 'white',
+  }
+};
 
 class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      exercises: [],
-      title: '',
+      color: 'blue',
+      type: 'light',
+      unit: 8,
+      option: {
+        color: ['blue', 'orange', 'red'],
+        type: ['light', 'dark'],
+        unit: [6, 8, 12, 14, 16],
+      },
+      typeStyle: theStyle.light,
     }
   }
 
-  handleInput = e => {
-    const keyTitle = e.target.value;
-    this.setState({
-      title: keyTitle,
-    })
-  }
-
-  addTitle = e => {
-    e.preventDefault();
-    const title = this.state.title;
-    if (title !== '') {
-      const titleList = [...this.state.exercises, title]
-      this.setState({
-        exercises: titleList,
-        title: '',
-      })
+  handleColor = color => {
+    const optionColor = this.state.option.color;
+    for (let i = 0; i < optionColor.length; i++) {
+      if (color === optionColor[i]) {
+        this.setState({
+          color: color,
+        })
+      }
     }
   }
 
-  deleteTitle = key => {
-    const filterExercises = this.state.exercises.filter((item, i) => {
-      return i !== key
-    })
-    this.setState({
-      exercises: filterExercises,
-    })
+  handleType = type => {
+    const optionType = this.state.option.type;
+    for (let i = 0; i < optionType.length; i++) {
+      if (type === optionType[i]) {
+        this.setState({
+          type: type,
+          typeStyle: this.state.typeStyle === theStyle.dark ? theStyle.light : theStyle.dark
+        })
+      }
+    }
   }
 
-
+  handleUnit = unit => {
+    const optionUnit = this.state.option.unit;
+    for (let i = 0; i < optionUnit.length; i++) {
+      if (unit === optionUnit[i]) {
+        this.setState({
+          unit: unit,
+        })
+      }
+    }
+  }
 
   render() {
+    const unit = this.state.unit;
+    const styles = {
+      main: {
+        padding: `${unit * 3}px`,
+      },
+    }
     return (
-      <Consumer>
-        {({ options, handleConfigVarChange, ...configVars }) => (
-          <div className="exercise-content">
-            <h1>Exercises</h1>
-            <div>
-              {Object.entries(options).map(([variable, defaults]) => (
-                <div key={variable}>
-                  <select>
-                    name={variable}
-                    value={configVars[variable]}
-                    onChange={handleConfigVarChange(variable)}
-                    {defaults.map(value => (
-                          <option key={value} value={value}>
-                            {value}
-                          </option>
-                        ))}
-                  </select>
-                </div>
-              ))}
-            </div>
-            <ExerciseItem
-              title={this.state.title}
-              handleInput={this.handleInput}
-              addTitle={this.addTitle}
-            />
-            <TitleList
-              exercises={this.state.exercises}
-              deleteTitle={this.deleteTitle}
-            />
-          </div>
-        )}
-      </Consumer>
+      <div className="exercise-content" style={this.state.typeStyle}>
+        <h1>Exercises</h1>
+        <header style={this.state.unitStyle}>
+          <PickStyle
+            color={this.state.color}
+            type={this.state.type}
+            unit={this.state.unit}
+            handleColor={this.handleColor}
+            handleType={this.handleType}
+            handleUnit={this.handleUnit}
+          />
+        </header>
+          <ExerciseItem
+            style={this.state.color}
+          />
+      </div >
     );
   }
 }
