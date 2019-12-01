@@ -1,19 +1,131 @@
 .pickstyle-header{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
-.pickstyle-ul{
+.pickstyle-color-ul{
+    position: absolute;
+    transform: translateX(-10%) translateY(-50%);
     list-style: none;
-}
-:hover.pickstyle-ul li{
     cursor: pointer;
+    width: 80px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    border: 0 #ffffff solid;
+    box-shadow: 0px 0px 3px 1px #949494;
+    padding: 0;
+    background: #ffffff;
+}
+.pickstyle-color-ul li{
+    width: 80px;
+    height: 40px;
+    padding-top: 7px;
+    text-align: center;
+}
+:hover.color-li-1{
+    cursor: pointer;
+    background: #aaaaaa;
+}
+:hover.color-li-2{
+    cursor: pointer;
+    background: #aaaaaa;
+}
+:hover.color-li-3{
+    cursor: pointer;
+    background: #aaaaaa;
+}
+.pickstyle-type-ul{
+    position: absolute;
+    transform: translateX(-10%) translateY(-50%);
+    list-style: none;
+    cursor: pointer;
+    width: 70px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    border: 0 #ffffff solid;
+    box-shadow: 0px 0px 3px 1px #949494;
+    padding: 0;
+    background: #ffffff;
+}
+.pickstyle-type-ul li{
+    width: 70px;
+    height: 40px;
+    padding-top: 7px;
+    text-align: center;
+}
+:hover.type-li-1{
+    cursor: pointer;
+    background: #aaaaaa;
+}
+:hover.type-li-2{
+    cursor: pointer;
+    background: #aaaaaa;
+}
+.pickstyle-unit-ul{
+    position: absolute;
+    transform: translateX(-10%) translateY(-60%);
+    list-style: none;
+    cursor: pointer;
+    width: 50px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 0 #ffffff solid;
+    box-shadow: 0px 0px 3px 1px #949494;
+    padding: 0;
+    background: #ffffff;
+}
+.pickstyle-unit-ul li{
+    width: 50px;
+    height: 40px;
+    padding-top: 7px;
+    text-align: center;
+}
+:hover.unit-li-1{
+    cursor: pointer;
+    background: #aaaaaa;
+}
+:hover.unit-li-2{
+    cursor: pointer;
+    background: #aaaaaa;
+}
+:hover.unit-li-3{
+    cursor: pointer;
+    background: #aaaaaa;
+}
+:hover.unit-li-4{
+    cursor: pointer;
+    background: #aaaaaa;
+}
+:hover.unit-li-5{
+    cursor: pointer;
+    background: #aaaaaa;
 }
 .pickstyle{
-    display: inline-block;
-    width: 50px;
+    width: 60px;
     border-bottom: 2px #aaaaaa solid;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5px;
 }
-#MdArrowDropDown{
-    display: inline-block;
+.pickstyle-unit{
+    width: 40px;
+    border-bottom: 2px #aaaaaa solid;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+:hover.pickstyle{
+    border-bottom: 4px #aaaaaa solid;
+}
+:hover.pickstyle-unit{
+    border-bottom: 4px #aaaaaa solid;
 }

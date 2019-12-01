@@ -3,84 +3,57 @@ import { MdArrowDropDown } from "react-icons/md";
 import './PickStyle.css';
 
 class PickStyle extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            colorList: false,
-            typeList: false,
-            unitList: false,
-        }
-    }
-
-    pickColor = () => {
-        this.setState({
-            colorList: !this.state.colorList,
-        })
-    }
-
-    pickType = () => {
-        this.setState({
-            typeList: !this.state.typeList,
-        })
-    }
-
-    pickUnit = () => {
-        this.setState({
-            unitList: !this.state.unitList,
-        })
-    }
 
     render() {
         return (
             <div className="pickstyle-header">
                 <div>
-                    <div className="pickstyle">
-                        {this.props.color}
-                        <MdArrowDropDown onClick={this.pickColor} />
-                    </div>
                     {
-                        this.state.colorList ?
+                        this.props.colorList ?
                             <div>
-                                <ul className="pickstyle-ul">
-                                    <li onClick={() => this.props.handleColor('blue')}>blue</li>
-                                    <li onClick={() => this.props.handleColor('orange')}>orange</li>
-                                    <li onClick={() => this.props.handleColor('red')}>red</li>
+                                <ul className="pickstyle-color-ul" style={this.props.typeStyle}>
+                                    <li className="color-li-1" onClick={() => this.props.handleColor('blue')}>blue</li>
+                                    <li className="color-li-2" onClick={() => this.props.handleColor('orange')}>orange</li>
+                                    <li className="color-li-3" onClick={() => this.props.handleColor('red')}>red</li>
                                 </ul>
-                            </div> : <MdArrowDropDown onClick={this.pickColor} />
+                            </div> :
+                            <div className="pickstyle" onClick={this.props.pickColor} >
+                                <div>{this.props.color}</div>
+                                <MdArrowDropDown />
+                            </div>
                     }
                 </div>
                 <div>
-                    <div className="pickstyle">
-                        {this.props.type}
-                        <MdArrowDropDown onClick={this.pickType} />
-                    </div>
                     {
-                        this.state.typeList ?
+                        this.props.typeList ?
                             <div>
-                                <ul className="pickstyle-ul">
-                                    <li onClick={() => this.props.handleType('light')}>light</li>
-                                    <li onClick={() => this.props.handleType('dark')}>dark</li>
+                                <ul className="pickstyle-type-ul" style={this.props.typeStyle}>
+                                    <li className="type-li-1" onClick={() => this.props.handleType('light')}>light</li>
+                                    <li className="type-li-2" onClick={() => this.props.handleType('dark')}>dark</li>
                                 </ul>
-                            </div> : <MdArrowDropDown onClick={this.pickType} />
+                            </div> :
+                            <div className="pickstyle" onClick={this.props.pickType} >
+                                <div>{this.props.type}</div>
+                                <MdArrowDropDown />
+                            </div>
                     }
                 </div>
                 <div>
-                    <div className="pickstyle">
-                        {this.props.unit}
-                        <MdArrowDropDown onClick={this.pickUnit} />
-                    </div>
                     {
-                        this.state.unitList ?
+                        this.props.unitList ?
                             <div>
-                                <ul className="pickstyle-ul">
-                                    <li onClick={() => this.props.handleUnit(6)}>6</li>
-                                    <li onClick={() => this.props.handleUnit(8)}>8</li>
-                                    <li onClick={() => this.props.handleUnit(12)}>12</li>
-                                    <li onClick={() => this.props.handleUnit(14)}>14</li>
-                                    <li onClick={() => this.props.handleUnit(16)}>16</li>
+                                <ul className="pickstyle-unit-ul" style={this.props.typeStyle}>
+                                    <li className="unit-li-1" onClick={() => this.props.handleUnit(6)}>6</li>
+                                    <li className="unit-li-2" onClick={() => this.props.handleUnit(8)}>8</li>
+                                    <li className="unit-li-3" onClick={() => this.props.handleUnit(12)}>12</li>
+                                    <li className="unit-li-4" onClick={() => this.props.handleUnit(14)}>14</li>
+                                    <li className="unit-li-5" onClick={() => this.props.handleUnit(16)}>16</li>
                                 </ul>
-                            </div> : <MdArrowDropDown onClick={this.pickUnit} />
+                            </div> :
+                            <div className="pickstyle-unit" onClick={this.props.pickUnit} >
+                                <div>{this.props.unit}</div>
+                                <MdArrowDropDown />
+                            </div>
                     }
                 </div>
             </div>

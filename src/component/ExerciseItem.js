@@ -42,19 +42,23 @@ class ExerciseItem extends Component {
 
     render() {
         return (
-            <div className="exercise-main">
-                <form onSubmit={this.addTitle}>
-                    <input
-                        className="exerciseItem-input"
-                        value={this.state.title}
-                        onChange={this.handleInput}
-                        placeholder='Exercise'
-                    />
-                    <button type="submit" style={{ backgroundColor: this.props.style }}>create</button>
-                </form>
+            <div>
+                <div className="exercise-main">
+                    <form onSubmit={this.addTitle}>
+                        <input
+                            className="exerciseItem-input"
+                            value={this.state.title}
+                            onChange={this.handleInput}
+                            placeholder='Exercise'
+                            style={this.props.typeStyle}
+                        />
+                        <button type="submit" style={{ backgroundColor: this.props.color }}>create</button>
+                    </form>
+                </div>
                 <TitleList
                     exercises={this.state.exercises}
                     deleteTitle={this.deleteTitle}
+                    color={this.props.color}
                 />
             </div>
         );

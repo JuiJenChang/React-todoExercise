@@ -1,0 +1,21 @@
+.MdDelete{
+    cursor: pointer;
+    font-size: 25px;
+    padding: 10px;
+}
+:hover.MdDelete{
+    border-radius: 50%;
+    background: #e6e0e0;
+}
+.create-ol{
+    list-style: none;
+}
+.create-ol li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.create-ol li span{
+    font-size: 20px;
+    padding-top: 10px;
+}

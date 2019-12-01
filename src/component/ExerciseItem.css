@@ -1,12 +1,29 @@
 .exercise-main{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 20px;
 }
 .exerciseItem-input{
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border: 0;
     border-bottom: 2px #aaaaaa solid;
+    font-size: 16px;
+    padding-bottom: 5px;
+    width: 170px;
+    margin-left: 45px;
+    outline: none;
+    background: none;
+}
+:hover.exerciseItem-input{
+    border-bottom: 4px #aaaaaa solid;
+}
+button{
+    color: #ffffff;
+    width: 80px;
+    height: 30px;
+    border: 0;
+    text-transform: uppercase;
+    border-radius: 6%;
+    margin-left: 50px;
+    cursor: pointer;
 }
