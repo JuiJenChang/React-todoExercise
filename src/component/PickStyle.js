@@ -8,6 +8,7 @@ class PickStyle extends Component {
         return (
             <div className="pickstyle-header">
                 <div>
+                    <div className="pickstyle-fix"></div>
                     {
                         this.props.colorList ?
                             <div>
@@ -24,6 +25,7 @@ class PickStyle extends Component {
                     }
                 </div>
                 <div>
+                    <div className="pickstyle-fix"></div>
                     {
                         this.props.typeList ?
                             <div>
@@ -39,6 +41,7 @@ class PickStyle extends Component {
                     }
                 </div>
                 <div>
+                    <div className="pickstyle-fix"></div>
                     {
                         this.props.unitList ?
                             <div>

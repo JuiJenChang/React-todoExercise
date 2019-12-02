@@ -53,7 +53,7 @@ class App extends Component {
         this.setState({
           type: type,
           typeList: !this.state.typeList,
-          typeStyle: this.state.typeStyle === theStyle.dark ? theStyle.light : theStyle.dark
+          typeStyle: this.state.typeStyle === theStyle[optionType[i]] ? theStyle[optionType[i]] : theStyle[optionType[i]]
         })
       }
     }

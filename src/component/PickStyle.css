@@ -15,7 +15,6 @@
     border: 0 #ffffff solid;
     box-shadow: 0px 0px 3px 1px #949494;
     padding: 0;
-    background: #ffffff;
 }
 .pickstyle-color-ul li{
     width: 80px;
@@ -47,7 +46,6 @@
     border: 0 #ffffff solid;
     box-shadow: 0px 0px 3px 1px #949494;
     padding: 0;
-    background: #ffffff;
 }
 .pickstyle-type-ul li{
     width: 70px;
@@ -77,7 +75,6 @@
     border: 0 #ffffff solid;
     box-shadow: 0px 0px 3px 1px #949494;
     padding: 0;
-    background: #ffffff;
 }
 .pickstyle-unit-ul li{
     width: 50px;
@@ -128,4 +125,7 @@
 }
 :hover.pickstyle-unit{
     border-bottom: 4px #aaaaaa solid;
+}
+.pickstyle-fix{
+    width: 60px;
 }
