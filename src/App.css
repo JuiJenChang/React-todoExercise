@@ -1,4 +1,4 @@
-.exercise-content{
+.App-content{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -13,4 +13,9 @@ h1{
     text-align: center;
     color: #aaaaaa;
     font-weight: 400;
+}
+.App-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
