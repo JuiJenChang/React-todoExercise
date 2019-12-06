@@ -24,13 +24,19 @@ class App extends Component {
       color: 'blue',
       type: 'light',
       unit: 8,
+      options: {
+        color: ['blue', 'orange', 'red'],
+        type: ['light', 'dark'],
+        unit: [6, 8, 12, 14, 16]
+      },
       typeStyle: theStyle.light,
     }
   }
 
   handleColor = color => {
+    const pickColor = this.state.options.color;
     this.setState({
-      color: color,
+      color: pickColor[color],
     })
   }
 
@@ -71,16 +77,19 @@ class App extends Component {
           <header className="App-header" style={styles.header}>
             <ColorStyle
               color={this.state.color}
+              pickColor={this.state.options.color}
               handleColor={this.handleColor}
               typeStyle={this.state.typeStyle}
             />
             <TypeStyle
               type={this.state.type}
+              pickType={this.state.options.type}
               handleType={this.handleType}
               typeStyle={this.state.typeStyle}
             />
             <UnitStyle
               unit={this.state.unit}
+              pickUnit={this.state.options.unit}
               handleUnit={this.handleUnit}
               typeStyle={this.state.typeStyle}
             />

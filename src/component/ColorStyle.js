@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MdArrowDropDown } from "react-icons/md";
-import './ColorStyle.css';
+import './Selector.css';
 
 class ColorStyle extends Component {
     constructor(props) {
@@ -18,19 +18,27 @@ class ColorStyle extends Component {
     }
 
     render() {
+
+        const colorList = this.props.pickColor.map((item, i) =>
+            <li key={i}
+                className="style-li"
+                onClick={() => this.props.handleColor(i)}
+            >
+                {item}
+            </li>
+        )
+
         return (
             <div>
-                <div className="color-content"></div>
+                <div className="content"></div>
                 {
                     this.state.picklist ?
                         <div>
                             <ul className="colorStyle-ul" onClick={this.switchList} style={this.props.typeStyle}>
-                                <li className="color-li-1" onClick={() => this.props.handleColor('blue')}>blue</li>
-                                <li className="color-li-2" onClick={() => this.props.handleColor('orange')}>orange</li>
-                                <li className="color-li-3" onClick={() => this.props.handleColor('red')}>red</li>
+                                {colorList}
                             </ul>
                         </div> :
-                        <div className="colorStyle" onClick={this.switchList} >
+                        <div className="selectStyle" onClick={this.switchList} >
                             <div>{this.props.color}</div>
                             <MdArrowDropDown />
                         </div>
@@ -41,3 +49,4 @@ class ColorStyle extends Component {
 }
 
 export default ColorStyle;
+
