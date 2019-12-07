@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ColorStyle from './component/ColorStyle';
 import TypeStyle from './component/TypeStyle';
 import UnitStyle from './component/UnitStyle';
+import Selector from './component/Selector';
 import ExerciseItem from './component/ExerciseItem';
 import './App.css';
 
@@ -74,22 +75,16 @@ class App extends Component {
       <div className="App-content" style={this.state.typeStyle}>
         <div style={styles.root}>
           <h1>Exercises</h1>
-          <header className="App-header" style={styles.header}>
-            <ColorStyle
+          <header style={styles.header}>
+            <Selector 
               color={this.state.color}
-              pickColor={this.state.options.color}
-              handleColor={this.handleColor}
-              typeStyle={this.state.typeStyle}
-            />
-            <TypeStyle
               type={this.state.type}
-              pickType={this.state.options.type}
-              handleType={this.handleType}
-              typeStyle={this.state.typeStyle}
-            />
-            <UnitStyle
               unit={this.state.unit}
+              pickColor={this.state.options.color}
+              pickType={this.state.options.type}
               pickUnit={this.state.options.unit}
+              handleColor={this.handleColor}
+              handleType={this.handleType}
               handleUnit={this.handleUnit}
               typeStyle={this.state.typeStyle}
             />

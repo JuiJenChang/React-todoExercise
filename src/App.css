@@ -14,8 +14,3 @@ h1{
     color: #aaaaaa;
     font-weight: 400;
 }
-.App-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
