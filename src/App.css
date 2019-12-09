@@ -14,3 +14,8 @@ h1{
     color: #aaaaaa;
     font-weight: 400;
 }
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

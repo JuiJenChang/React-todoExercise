@@ -32,9 +32,8 @@ class App extends Component {
   }
 
   handleColor = color => {
-    const pickColor = this.state.options.color;
     this.setState({
-      color: pickColor[color],
+      color: color,
     })
   }
 
@@ -60,7 +59,7 @@ class App extends Component {
         padding: unit * 2,
         maxWidth: 400,
       },
-      main: {
+      header: {
         marginTop: `${unit * 2}`,
       },
       list: {
@@ -72,19 +71,26 @@ class App extends Component {
       <div className="App-content" style={this.state.typeStyle}>
         <div style={styles.root}>
           <h1>Exercises</h1>
-            <Selector 
-              color={this.state.color}
-              type={this.state.type}
-              unit={this.state.unit}
-              pickColor={this.state.options.color}
-              pickType={this.state.options.type}
-              pickUnit={this.state.options.unit}
-              handleColor={this.handleColor}
-              handleType={this.handleType}
-              handleUnit={this.handleUnit}
+          <header className="header-container" style={styles.header}>
+            <Selector
+              selectItem={this.state.color}
+              data={this.state.options.color}
+              handleClick={this.handleColor}
               typeStyle={this.state.typeStyle}
-              style={styles.main}
             />
+            <Selector
+              selectItem={this.state.type}
+              data={this.state.options.type}
+              handleClick={this.handleType}
+              typeStyle={this.state.typeStyle}
+            />
+            <Selector
+              selectItem={this.state.unit}
+              data={this.state.options.unit}
+              handleClick={this.handleUnit}
+              typeStyle={this.state.typeStyle}
+            />
+          </header>
           <ExerciseItem
             style={styles.list}
             color={this.state.color}

@@ -1,15 +1,7 @@
-.selector-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-.content{
+.selector-content{
     width: 60px;
 }
-.unit-content{
-    width: 40px;
-}
-.colorStyle-ul{
+.selector-ul{
     position: absolute;
     transform: translateX(-10%) translateY(-50%);
     list-style: none;
@@ -18,57 +10,18 @@
     height: 140px;
     display: flex;
     flex-direction: column;
-    border: 0 #ffffff solid;
-    box-shadow: 0px 0px 3px 1px #949494;
-    padding: 0;
-}
-.typeStyle-ul{
-    position: absolute;
-    transform: translateX(-10%) translateY(-50%);
-    list-style: none;
-    cursor: pointer;
-    width: 60px;
-    height: 90px;
-    display: flex;
-    flex-direction: column;
-    border: 0 #ffffff solid;
-    box-shadow: 0px 0px 3px 1px #949494;
-    padding: 0;
-}
-.unitStyle-ul{
-    position: absolute;
-    transform: translateX(-10%) translateY(-60%);
-    list-style: none;
-    cursor: pointer;
-    width: 40px;
-    height: 180px;
-    display: flex;
-    flex-direction: column;
     justify-content: space-around;
-    align-items: center;
     border: 0 #ffffff solid;
     box-shadow: 0px 0px 3px 1px #949494;
     padding: 0;
 }
-.colorStyle-ul li{
+.selector-ul li{
     width: 60px;
     height: 40px;
     padding-top: 7px;
     text-align: center;
 }
-.typeStyle-ul li{
-    width: 60px;
-    height: 40px;
-    padding-top: 7px;
-    text-align: center;
-}
-.unitStyle-ul li{
-    width: 40px;
-    height: 40px;
-    padding-top: 7px;
-    text-align: center;
-}
-:hover.style-li{
+:hover.selector-li{
     cursor: pointer;
     background: #aaaaaa;
 }
@@ -82,17 +35,5 @@
     padding-bottom: 5px;
 }
 :hover.selectStyle{
-    border-bottom: 4px #aaaaaa solid;
-}
-.unitStyle{
-    width: 40px;
-    border-bottom: 2px #aaaaaa solid;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 5px;
-}
-:hover.unitStyle{
     border-bottom: 4px #aaaaaa solid;
 }
