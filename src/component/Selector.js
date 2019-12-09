@@ -7,13 +7,27 @@ class Selector extends Component {
         super(props)
 
         this.state = {
-            picklist: false,
+            colorSelector: false,
+            typeSelector: false,
+            unitSelector: false,
         }
     }
 
-    switchList = () => {
+    switchColorSelector = () => {
         this.setState({
-            picklist: !this.state.picklist,
+            colorSelector: !this.state.colorSelector,
+        })
+    }
+
+    switchTypeSelector = () => {
+        this.setState({
+            typeSelector: !this.state.typeSelector,
+        })
+    }
+
+    switchUnitSelector = () => {
+        this.setState({
+            unitSelector: !this.state.unitSelector,
         })
     }
 
@@ -49,13 +63,13 @@ class Selector extends Component {
                 <div>
                     <div className="content"></div>
                     {
-                        this.state.picklist ?
+                        this.state.colorSelector ?
                             <div>
-                                <ul className="colorStyle-ul" onClick={this.switchList} style={this.props.typeStyle}>
+                                <ul className="colorStyle-ul" onClick={this.switchColorSelector} style={this.props.typeStyle}>
                                     {colorList}
                                 </ul>
                             </div> :
-                            <div className="selectStyle" onClick={this.switchList} >
+                            <div className="selectStyle" onClick={this.switchColorSelector} >
                                 <div>{this.props.color}</div>
                                 <MdArrowDropDown />
                             </div>
@@ -64,13 +78,13 @@ class Selector extends Component {
                 <div>
                     <div className="content"></div>
                     {
-                        this.state.picklist ?
+                        this.state.typeSelector ?
                             <div>
-                                <ul className="typeStyle-ul" onClick={this.switchList} style={this.props.typeStyle}>
+                                <ul className="typeStyle-ul" onClick={this.switchTypeSelector} style={this.props.typeStyle}>
                                     {typeList}
                                 </ul>
                             </div> :
-                            <div className="selectStyle" onClick={this.switchList} >
+                            <div className="selectStyle" onClick={this.switchTypeSelector} >
                                 <div>{this.props.type}</div>
                                 <MdArrowDropDown />
                             </div>
@@ -79,13 +93,13 @@ class Selector extends Component {
                 <div>
                     <div className="unit-content"></div>
                     {
-                        this.state.picklist ?
+                        this.state.unitSelector ?
                             <div>
-                                <ul className="unitStyle-ul" onClick={this.switchList} style={this.props.typeStyle}>
+                                <ul className="unitStyle-ul" onClick={this.switchUnitSelector} style={this.props.typeStyle}>
                                     {unitList}
                                 </ul>
                             </div> :
-                            <div className="unitStyle" onClick={this.switchList} >
+                            <div className="unitStyle" onClick={this.switchUnitSelector} >
                                 <div>{this.props.unit}</div>
                                 <MdArrowDropDown />
                             </div>

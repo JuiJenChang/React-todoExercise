@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import ColorStyle from './component/ColorStyle';
-import TypeStyle from './component/TypeStyle';
-import UnitStyle from './component/UnitStyle';
 import Selector from './component/Selector';
 import ExerciseItem from './component/ExerciseItem';
 import './App.css';
@@ -63,7 +60,7 @@ class App extends Component {
         padding: unit * 2,
         maxWidth: 400,
       },
-      header: {
+      main: {
         marginTop: `${unit * 2}`,
       },
       list: {
@@ -75,7 +72,6 @@ class App extends Component {
       <div className="App-content" style={this.state.typeStyle}>
         <div style={styles.root}>
           <h1>Exercises</h1>
-          <header style={styles.header}>
             <Selector 
               color={this.state.color}
               type={this.state.type}
@@ -87,8 +83,8 @@ class App extends Component {
               handleType={this.handleType}
               handleUnit={this.handleUnit}
               typeStyle={this.state.typeStyle}
+              style={styles.main}
             />
-          </header>
           <ExerciseItem
             style={styles.list}
             color={this.state.color}
